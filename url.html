@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>URL Shortener</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .input-group input {
+            border-color: #007bff;
+        }
+        .input-group-append button {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+        }
+        .alert {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">URL Shortener</h1>
+        <form method="post">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Original URL" name="original_url" required>
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Shorten</button>
+                </div>
+            </div>
+        </form>
+        {% if short_url %}
+            <div class="alert alert-success" role="alert">
+                Short URL is: <a href="{{ short_url }}" target="_blank">{{ short_url }}</a>
+            </div>
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
